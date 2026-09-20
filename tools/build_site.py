@@ -31,9 +31,18 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = pathlib.Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else ROOT
 C = ROOT / "content"
 
+def load_list(name):
+    """A content list is either a bare array or {"items": [...]}.
+
+    Pages CMS can only label and collapse a list that is a field rather than
+    the whole file, and a field needs a key to live under.
+    """
+    d = json.loads((C / name).read_text(encoding="utf-8"))
+    return d["items"] if isinstance(d, dict) and isinstance(d.get("items"), list) else d
+
 site = json.loads((C / "site.json").read_text(encoding="utf-8"))
 works = json.loads((C / "artworks.json").read_text(encoding="utf-8"))
-shows = json.loads((C / "exhibitions.json").read_text(encoding="utf-8"))
+shows = load_list("exhibitions.json")
 teach = json.loads((C / "teaching.json").read_text(encoding="utf-8"))
 courses = json.loads((C / "courses.json").read_text(encoding="utf-8")) if (C / "courses.json").exists() else []
 

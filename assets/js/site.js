@@ -13,7 +13,7 @@
     (cache[name] ||= fetch(`${R}content/${name}.json`, { cache: "no-cache" }).then((r) => {
       if (!r.ok) throw new Error(`Could not load ${name}.json (${r.status})`);
       return r.json();
-    }));
+    }).then((d) => (d && !Array.isArray(d) && Array.isArray(d.items) ? d.items : d)));
 
   function el(tag, attrs = {}, ...kids) {
     const n = document.createElement(tag);

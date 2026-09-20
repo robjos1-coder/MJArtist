@@ -1,345 +1,347 @@
-[
-  {
-    "title": "Influences of Vaughan Williams — concert with artwork by Michael Joseph",
-    "venue": "Leith Hill Place (National Trust)",
-    "address": "Leith Hill Place, Dorking, Surrey",
-    "start": "2026-10-08",
-    "end": "2026-10-08",
-    "hours": "6pm – 9pm · booking essential",
-    "link": "https://www.nationaltrust.org.uk/visit/surrey/leith-hill/events/1d7cf0ba-8561-48ef-a931-1091bf838b6c",
-    "notes": "The Stradivarius Piano Trio play Ravel, Ina Boyle and Vaughan Williams in the composer's childhood home, accompanied by Michael's artwork"
-  },
-  {
-    "title": "Festival of Chichester — Inspired by Music",
-    "venue": "Great Ballard, Eartham",
-    "address": "Great Ballard, Eartham PO18 0LR",
-    "start": "2026-06-14",
-    "end": "2026-06-14",
-    "hours": "",
-    "link": "https://www.sussexexpress.co.uk/business/consumer/the-stradivarius-piano-trio-grace-festival-of-chichester-8556272",
-    "notes": "Michael's painting interpreting Ravel's Pantoum, shown as the Stradivarius Piano Trio performed it"
-  },
-  {
-    "title": "Surrey Sculpture Society sculpture trail",
-    "venue": "Ramster Garden",
-    "address": "Petworth Road, Chiddingfold GU8 4SN",
-    "start": "2026-05-01",
-    "end": "2026-05-31",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/calendar/ramster-gardens-2026",
-    "notes": "Michael's bronze exhibited by the lake"
-  },
-  {
-    "title": "2026 exhibition",
-    "venue": "Hannah Peschar Sculpture Garden",
-    "address": "Black and White Cottage, Standon Lane, Dorking RH5 5QU",
-    "start": "2026-04-03",
-    "end": "2026-10-25",
-    "hours": "Thu–Sat 11am–6pm, Sun 12–5pm · book ahead",
-    "link": "https://www.hannahpescharsculpture.com/",
-    "notes": "Four new pieces: Meanders and Squaring the Circle in the garden, Just Born and Stretch indoors. Reflection stays overlooking the oriental pond"
-  },
-  {
-    "title": "Surrey Sculpture Society at the Art & Artisans Christmas Fair",
-    "venue": "West Horsley Place",
-    "address": "Epsom Road, West Horsley KT24 6AN",
-    "start": "2025-11-21",
-    "end": "2025-11-23",
-    "hours": "10am – 4pm",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": "Exhibition in the drawing room of the Grade I medieval manor house"
-  },
-  {
-    "title": "Festival of Chichester closing concert — Music Inspired by Art Inspired by Music",
-    "venue": "Great Ballard, Eartham",
-    "address": "Great Ballard, Eartham PO18 0LR",
-    "start": "2025-07-20",
-    "end": "2025-07-20",
-    "hours": "7pm",
-    "link": "https://www.sussexexpress.co.uk/news/stradivarius-piano-trio-returns-to-the-festival-of-chichester-5211809",
-    "notes": "A one-man show of Michael's music paintings, with the Stradivarius Piano Trio playing a programme built around them. It premiered his interpretation of Michael Nyman's The Heart Asks Pleasure First, commissioned by the trio"
-  },
-  {
-    "title": "Summer Show & Sculpture Trail",
-    "venue": "Atherton Green Art Gallery",
-    "address": "Farringdon Place, Church Road, Upper Farringdon, Alton GU34 3EH",
-    "start": "2025-06-01",
-    "end": "2025-06-29",
-    "date_text": "June 2025, until 29 June",
-    "hours": "11am – 5pm",
-    "link": "https://athertongreen.art/",
-    "notes": "Stretching skywards, bronze on oak. Part of the Winchester & District Garden Festival (with Michael's talk 'Art and the Garden' on 21 June) and Surrey Artists Open Studios"
-  },
-  {
-    "title": "2025 season",
-    "venue": "Hannah Peschar Sculpture Garden",
-    "address": "Black and White Cottage, Standon Lane, Dorking RH5 5QU",
-    "start": "2025-04-01",
-    "end": "2025-10-31",
-    "date_text": "2025 season",
-    "hours": "",
-    "link": "https://www.hannahpescharsculpture.com/",
-    "notes": "Reflection, installed overlooking the oriental pond"
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "West Horsley Place",
-    "address": "Epsom Road, West Horsley KT24 6AN",
-    "start": "2024-11-22",
-    "end": "2024-11-24",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Savill Garden",
-    "address": "Windsor TW20 0UJ",
-    "start": "2024-09-11",
-    "end": "2024-10-29",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Claremont Landscape Garden",
-    "address": "Portsmouth Road, Esher KT10 9JG",
-    "start": "2024-06-08",
-    "end": "2024-07-14",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Atherton Green Art Gallery",
-    "venue": "Atherton Green",
-    "address": "Farringdon Place, Church Road, Upper Farringdon, Alton GU34 3EH",
-    "start": "2024-06-01",
-    "end": "2024-06-23",
-    "hours": "",
-    "link": "https://athertongreen.art/",
-    "notes": ""
-  },
-  {
-    "title": "Sullington Contemporary",
-    "venue": "Sullington Manor Farm",
-    "address": "Storrington RH20 4AE",
-    "start": "2024-05-15",
-    "end": "2024-05-26",
-    "hours": "",
-    "link": "https://www.instagram.com/contemporary_art_sullington/",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Ramster Gardens",
-    "address": "Chiddingfold GU8 4SN",
-    "start": "2024-05-03",
-    "end": "2024-06-02",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Hannah Peschar Sculpture Garden",
-    "venue": "Hannah Peschar",
-    "address": "Black and White Cottage, Standon Lane, Dorking RH5 5QU",
-    "start": "2024-04-01",
-    "end": "2024-10-31",
-    "hours": "Thu–Sat 11am–6pm, Sun 11am–5pm",
-    "link": "https://www.hannahpescharsculpture.com/",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Leonardslee Gardens",
-    "address": "Horsham RH13 6PP",
-    "start": "2024-01-01",
-    "end": "2024-12-31",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": "All year"
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Savill Garden",
-    "address": "Windsor TW20 0UJ",
-    "start": "2022-09-22",
-    "end": "2022-11-01",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Arundel Gallery Trail",
-    "venue": "Arundel Gallery Trail",
-    "address": "Arundel, West Sussex BN18",
-    "start": "2022-08-20",
-    "end": "2022-08-29",
-    "hours": "",
-    "link": "https://www.arundelgallerytrail.co.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Leonardslee Gardens",
-    "address": "Horsham RH13 6PP",
-    "start": "2022-07-29",
-    "end": "2022-09-04",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Standen House (National Trust)",
-    "address": "West Hoathly Road, East Grinstead RH19 4NE",
-    "start": "2022-06-24",
-    "end": "2022-07-24",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Exhibition",
-    "venue": "Atherton Green Art Gallery",
-    "address": "Farringdon Place, Church Road, Upper Farringdon, Alton GU34 3EH",
-    "start": "2022-06-12",
-    "end": "2022-07-03",
-    "hours": "",
-    "link": "https://www.athertongreen.art",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Ramster Gardens",
-    "address": "Chiddingfold GU8 4SN",
-    "start": "2022-04-22",
-    "end": "2022-06-05",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Savill Garden",
-    "address": "Windsor TW20 0UJ",
-    "start": "2021-09-22",
-    "end": "2021-11-02",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Leonardslee Gardens",
-    "address": "Horsham RH13 6PP",
-    "start": "2021-07-30",
-    "end": "2021-09-05",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Sculpture exhibition",
-    "venue": "High Clandon Estate Vineyard",
-    "address": "East Clandon GU4 7RP",
-    "start": "2021-07-17",
-    "end": "2021-08-01",
-    "hours": "",
-    "link": "https://www.highclandon.co.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Ramster Gardens",
-    "address": "Chiddingfold GU8 4SN",
-    "start": "2021-04-23",
-    "end": "2021-05-20",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Savill Garden",
-    "address": "Windsor TW20 0UJ",
-    "start": "2020-09-23",
-    "end": "2020-11-03",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "RHS Garden Wisley",
-    "address": "Wisley, Woking GU23 6QB",
-    "start": "2020-08-15",
-    "end": "2020-09-20",
-    "hours": "",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Sussex Sculpture Studio",
-    "venue": "Sussex Sculpture Studio",
-    "address": "Billingshurst RH14 9TF",
-    "start": "2020-04-25",
-    "end": "2020-04-26",
-    "hours": "",
-    "link": "https://www.sussexsculpture.co.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Amberley Museum Sculpture Trail",
-    "venue": "Amberley Museum",
-    "address": "Amberley, Arundel BN18 9LT",
-    "start": "2020-03-14",
-    "end": "2020-06-28",
-    "hours": "",
-    "link": "https://www.amberleymuseum.co.uk/2020-events",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "RHS Garden Wisley",
-    "address": "Wisley, Woking GU23 6QB",
-    "start": "2019-08-17",
-    "end": "2019-09-22",
-    "hours": "10am – 6pm",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": "Exhausted, on the sculpture trail"
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Hatchlands Park (National Trust)",
-    "address": "East Clandon, Guildford GU4 7RT",
-    "start": "2019-06-18",
-    "end": "2019-07-14",
-    "hours": "10am – 5pm · closed Mon, Fri, Sat",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "Surrey Sculpture Society",
-    "venue": "Surrey Hills Sculpture Garden",
-    "address": "Birtley House, Bramley, Guildford GU5 0LB",
-    "start": "2019-05-04",
-    "end": "2019-06-02",
-    "hours": "10am – 4:30pm",
-    "link": "https://www.surreysculpture.org.uk/",
-    "notes": ""
-  },
-  {
-    "title": "The Creative Figure — solo exhibition",
-    "venue": "Oxmarket Gallery",
-    "address": "Chichester",
-    "start": "2017-01-01",
-    "end": "2017-12-31",
-    "hours": "",
-    "link": "",
-    "notes": "Drawings, paintings and sculpture exploring the human figure",
-    "date_text": "2017"
-  }
-]
+{
+  "items": [
+    {
+      "title": "Influences of Vaughan Williams — concert with artwork by Michael Joseph",
+      "venue": "Leith Hill Place (National Trust)",
+      "address": "Leith Hill Place, Dorking, Surrey",
+      "start": "2026-10-08",
+      "end": "2026-10-08",
+      "hours": "6pm – 9pm · booking essential",
+      "link": "https://www.nationaltrust.org.uk/visit/surrey/leith-hill/events/1d7cf0ba-8561-48ef-a931-1091bf838b6c",
+      "notes": "The Stradivarius Piano Trio play Ravel, Ina Boyle and Vaughan Williams in the composer's childhood home, accompanied by Michael's artwork"
+    },
+    {
+      "title": "Festival of Chichester — Inspired by Music",
+      "venue": "Great Ballard, Eartham",
+      "address": "Great Ballard, Eartham PO18 0LR",
+      "start": "2026-06-14",
+      "end": "2026-06-14",
+      "hours": "",
+      "link": "https://www.sussexexpress.co.uk/business/consumer/the-stradivarius-piano-trio-grace-festival-of-chichester-8556272",
+      "notes": "Michael's painting interpreting Ravel's Pantoum, shown as the Stradivarius Piano Trio performed it"
+    },
+    {
+      "title": "Surrey Sculpture Society sculpture trail",
+      "venue": "Ramster Garden",
+      "address": "Petworth Road, Chiddingfold GU8 4SN",
+      "start": "2026-05-01",
+      "end": "2026-05-31",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/calendar/ramster-gardens-2026",
+      "notes": "Michael's bronze exhibited by the lake"
+    },
+    {
+      "title": "2026 exhibition",
+      "venue": "Hannah Peschar Sculpture Garden",
+      "address": "Black and White Cottage, Standon Lane, Dorking RH5 5QU",
+      "start": "2026-04-03",
+      "end": "2026-10-25",
+      "hours": "Thu–Sat 11am–6pm, Sun 12–5pm · book ahead",
+      "link": "https://www.hannahpescharsculpture.com/",
+      "notes": "Four new pieces: Meanders and Squaring the Circle in the garden, Just Born and Stretch indoors. Reflection stays overlooking the oriental pond"
+    },
+    {
+      "title": "Surrey Sculpture Society at the Art & Artisans Christmas Fair",
+      "venue": "West Horsley Place",
+      "address": "Epsom Road, West Horsley KT24 6AN",
+      "start": "2025-11-21",
+      "end": "2025-11-23",
+      "hours": "10am – 4pm",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": "Exhibition in the drawing room of the Grade I medieval manor house"
+    },
+    {
+      "title": "Festival of Chichester closing concert — Music Inspired by Art Inspired by Music",
+      "venue": "Great Ballard, Eartham",
+      "address": "Great Ballard, Eartham PO18 0LR",
+      "start": "2025-07-20",
+      "end": "2025-07-20",
+      "hours": "7pm",
+      "link": "https://www.sussexexpress.co.uk/news/stradivarius-piano-trio-returns-to-the-festival-of-chichester-5211809",
+      "notes": "A one-man show of Michael's music paintings, with the Stradivarius Piano Trio playing a programme built around them. It premiered his interpretation of Michael Nyman's The Heart Asks Pleasure First, commissioned by the trio"
+    },
+    {
+      "title": "Summer Show & Sculpture Trail",
+      "venue": "Atherton Green Art Gallery",
+      "address": "Farringdon Place, Church Road, Upper Farringdon, Alton GU34 3EH",
+      "start": "2025-06-01",
+      "end": "2025-06-29",
+      "date_text": "June 2025, until 29 June",
+      "hours": "11am – 5pm",
+      "link": "https://athertongreen.art/",
+      "notes": "Stretching skywards, bronze on oak. Part of the Winchester & District Garden Festival (with Michael's talk 'Art and the Garden' on 21 June) and Surrey Artists Open Studios"
+    },
+    {
+      "title": "2025 season",
+      "venue": "Hannah Peschar Sculpture Garden",
+      "address": "Black and White Cottage, Standon Lane, Dorking RH5 5QU",
+      "start": "2025-04-01",
+      "end": "2025-10-31",
+      "date_text": "2025 season",
+      "hours": "",
+      "link": "https://www.hannahpescharsculpture.com/",
+      "notes": "Reflection, installed overlooking the oriental pond"
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "West Horsley Place",
+      "address": "Epsom Road, West Horsley KT24 6AN",
+      "start": "2024-11-22",
+      "end": "2024-11-24",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Savill Garden",
+      "address": "Windsor TW20 0UJ",
+      "start": "2024-09-11",
+      "end": "2024-10-29",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Claremont Landscape Garden",
+      "address": "Portsmouth Road, Esher KT10 9JG",
+      "start": "2024-06-08",
+      "end": "2024-07-14",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Atherton Green Art Gallery",
+      "venue": "Atherton Green",
+      "address": "Farringdon Place, Church Road, Upper Farringdon, Alton GU34 3EH",
+      "start": "2024-06-01",
+      "end": "2024-06-23",
+      "hours": "",
+      "link": "https://athertongreen.art/",
+      "notes": ""
+    },
+    {
+      "title": "Sullington Contemporary",
+      "venue": "Sullington Manor Farm",
+      "address": "Storrington RH20 4AE",
+      "start": "2024-05-15",
+      "end": "2024-05-26",
+      "hours": "",
+      "link": "https://www.instagram.com/contemporary_art_sullington/",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Ramster Gardens",
+      "address": "Chiddingfold GU8 4SN",
+      "start": "2024-05-03",
+      "end": "2024-06-02",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Hannah Peschar Sculpture Garden",
+      "venue": "Hannah Peschar",
+      "address": "Black and White Cottage, Standon Lane, Dorking RH5 5QU",
+      "start": "2024-04-01",
+      "end": "2024-10-31",
+      "hours": "Thu–Sat 11am–6pm, Sun 11am–5pm",
+      "link": "https://www.hannahpescharsculpture.com/",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Leonardslee Gardens",
+      "address": "Horsham RH13 6PP",
+      "start": "2024-01-01",
+      "end": "2024-12-31",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": "All year"
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Savill Garden",
+      "address": "Windsor TW20 0UJ",
+      "start": "2022-09-22",
+      "end": "2022-11-01",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Arundel Gallery Trail",
+      "venue": "Arundel Gallery Trail",
+      "address": "Arundel, West Sussex BN18",
+      "start": "2022-08-20",
+      "end": "2022-08-29",
+      "hours": "",
+      "link": "https://www.arundelgallerytrail.co.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Leonardslee Gardens",
+      "address": "Horsham RH13 6PP",
+      "start": "2022-07-29",
+      "end": "2022-09-04",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Standen House (National Trust)",
+      "address": "West Hoathly Road, East Grinstead RH19 4NE",
+      "start": "2022-06-24",
+      "end": "2022-07-24",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Exhibition",
+      "venue": "Atherton Green Art Gallery",
+      "address": "Farringdon Place, Church Road, Upper Farringdon, Alton GU34 3EH",
+      "start": "2022-06-12",
+      "end": "2022-07-03",
+      "hours": "",
+      "link": "https://www.athertongreen.art",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Ramster Gardens",
+      "address": "Chiddingfold GU8 4SN",
+      "start": "2022-04-22",
+      "end": "2022-06-05",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Savill Garden",
+      "address": "Windsor TW20 0UJ",
+      "start": "2021-09-22",
+      "end": "2021-11-02",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Leonardslee Gardens",
+      "address": "Horsham RH13 6PP",
+      "start": "2021-07-30",
+      "end": "2021-09-05",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Sculpture exhibition",
+      "venue": "High Clandon Estate Vineyard",
+      "address": "East Clandon GU4 7RP",
+      "start": "2021-07-17",
+      "end": "2021-08-01",
+      "hours": "",
+      "link": "https://www.highclandon.co.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Ramster Gardens",
+      "address": "Chiddingfold GU8 4SN",
+      "start": "2021-04-23",
+      "end": "2021-05-20",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Savill Garden",
+      "address": "Windsor TW20 0UJ",
+      "start": "2020-09-23",
+      "end": "2020-11-03",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "RHS Garden Wisley",
+      "address": "Wisley, Woking GU23 6QB",
+      "start": "2020-08-15",
+      "end": "2020-09-20",
+      "hours": "",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Sussex Sculpture Studio",
+      "venue": "Sussex Sculpture Studio",
+      "address": "Billingshurst RH14 9TF",
+      "start": "2020-04-25",
+      "end": "2020-04-26",
+      "hours": "",
+      "link": "https://www.sussexsculpture.co.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Amberley Museum Sculpture Trail",
+      "venue": "Amberley Museum",
+      "address": "Amberley, Arundel BN18 9LT",
+      "start": "2020-03-14",
+      "end": "2020-06-28",
+      "hours": "",
+      "link": "https://www.amberleymuseum.co.uk/2020-events",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "RHS Garden Wisley",
+      "address": "Wisley, Woking GU23 6QB",
+      "start": "2019-08-17",
+      "end": "2019-09-22",
+      "hours": "10am – 6pm",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": "Exhausted, on the sculpture trail"
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Hatchlands Park (National Trust)",
+      "address": "East Clandon, Guildford GU4 7RT",
+      "start": "2019-06-18",
+      "end": "2019-07-14",
+      "hours": "10am – 5pm · closed Mon, Fri, Sat",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "Surrey Sculpture Society",
+      "venue": "Surrey Hills Sculpture Garden",
+      "address": "Birtley House, Bramley, Guildford GU5 0LB",
+      "start": "2019-05-04",
+      "end": "2019-06-02",
+      "hours": "10am – 4:30pm",
+      "link": "https://www.surreysculpture.org.uk/",
+      "notes": ""
+    },
+    {
+      "title": "The Creative Figure — solo exhibition",
+      "venue": "Oxmarket Gallery",
+      "address": "Chichester",
+      "start": "2017-01-01",
+      "end": "2017-12-31",
+      "hours": "",
+      "link": "",
+      "notes": "Drawings, paintings and sculpture exploring the human figure",
+      "date_text": "2017"
+    }
+  ]
+}
