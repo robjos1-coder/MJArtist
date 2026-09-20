@@ -12,7 +12,10 @@ content:
     type: file
     path: content/artworks.json
     format: json
-    list: true
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{index}. {title} - {type}, {series}"
     description: >-
       Every artwork on the site. Drag to reorder — the order here is the order on the website.
       Tick "Include in home page slideshow" for the pieces that should rotate beside Michael's name.
@@ -101,19 +104,22 @@ content:
     type: file
     path: content/exhibitions.json
     format: json
-    list: true
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{index}. {venue} - {start}"
     description: >-
       Add each show with a start and end date. The website works out by itself whether a show
       is upcoming, on now or past — nothing needs deleting.
     fields:
       - { name: venue, label: Venue, type: string, required: true }
       - { name: title, label: Exhibition name, type: string }
-      - { name: address, label: Address, type: string }
+      - { name: address, label: Address, type: text }
       - { name: start, label: Opens, type: date, required: true, options: { format: yyyy-MM-dd } }
       - { name: end, label: Closes, type: date, required: true, options: { format: yyyy-MM-dd } }
       - { name: hours, label: Opening hours, type: string }
       - { name: link, label: Website link, type: string, description: "Full address starting https://" }
-      - { name: notes, label: Notes, type: string }
+      - { name: notes, label: Notes, type: text }
       - { name: date_text, label: Date shown instead (optional), type: string, description: "e.g. '2017' when exact dates are unknown" }
 
   - name: teaching
@@ -181,7 +187,7 @@ content:
       - { name: site_url, label: "Website address (advanced)", type: string, description: "https://www.mjartist.com — used for search engines and sharing" }
       - { name: disciplines, label: Disciplines line, type: string }
       - { name: location, label: Location, type: string }
-      - { name: tagline, label: Search-engine description, type: string }
+      - { name: tagline, label: Search-engine description, type: text }
       - { name: intro, label: Home page introduction, type: text }
       - { name: hero_image, label: Home page main image, type: image }
       - { name: hero_caption, label: Main image caption, type: string }
@@ -189,7 +195,7 @@ content:
       - { name: about_quote, label: About page quotation, type: text }
       - { name: statement_title, label: Statement heading, type: string }
       - { name: statement, label: Artist statement, type: text, description: "Leave a blank line between paragraphs." }
-      - { name: materials, label: Materials (comma separated), type: string }
+      - { name: materials, label: Materials (comma separated), type: text }
       - { name: figure_title, label: Creative Figure page heading, type: string }
       - { name: figure_lede, label: Creative Figure opening line, type: text }
       - { name: figure_quote, label: Creative Figure quotation, type: text }
