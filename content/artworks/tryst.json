@@ -1,0 +1,21 @@
+{
+  "order": 30,
+  "title": "Tryst",
+  "series": "The Creative Figure",
+  "stage": "",
+  "for_work": "",
+  "image": "images/tryst.jpg",
+  "more_images": [
+    "images/tryst-view.jpg",
+    "images/tryst-view-2.jpg"
+  ],
+  "medium": "Corten steel",
+  "size": "Over 3 m high",
+  "year": "",
+  "price": "",
+  "status": "",
+  "hero": true,
+  "featured": true,
+  "notes": "Two figures in conversation: a Corten silhouette leaning into an open lattice of welded steel. Over three metres tall.",
+  "type": "Sculpture"
+}

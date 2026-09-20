@@ -1,0 +1,20 @@
+{
+  "order": 600,
+  "title": "Dentistree",
+  "series": "Landscapes",
+  "stage": "",
+  "for_work": "",
+  "image": "images/dentistree.jpg",
+  "more_images": [
+    "images/dentistree-view.jpg"
+  ],
+  "medium": "",
+  "size": "",
+  "year": "",
+  "price": "",
+  "status": "",
+  "hero": false,
+  "featured": false,
+  "notes": "",
+  "type": "Painting"
+}

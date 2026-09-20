@@ -1,0 +1,20 @@
+{
+  "order": 10,
+  "title": "Reflection",
+  "series": "The Creative Figure",
+  "stage": "",
+  "for_work": "",
+  "image": "images/reflection.jpg",
+  "more_images": [
+    "images/reflection-view.jpg"
+  ],
+  "medium": "Stainless steel",
+  "size": "",
+  "year": "",
+  "price": "",
+  "status": "",
+  "hero": false,
+  "featured": true,
+  "notes": "",
+  "type": "Sculpture"
+}

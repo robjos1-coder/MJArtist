@@ -1,0 +1,20 @@
+{
+  "order": 70,
+  "title": "Suzanne",
+  "series": "The Creative Figure",
+  "stage": "",
+  "for_work": "",
+  "image": "images/suzanne.jpg",
+  "more_images": [
+    "images/suzanne-view.jpg"
+  ],
+  "medium": "Bronze, cast in the artist's own foundry",
+  "size": "",
+  "year": "",
+  "price": "",
+  "status": "",
+  "hero": false,
+  "featured": true,
+  "notes": "Cast by Michael in his own foundry: lost-wax, silicon bronze, poured by hand. The film on the Sculpture page follows it from wax to finished bronze.",
+  "type": "Sculpture"
+}

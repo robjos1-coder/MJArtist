@@ -41,26 +41,11 @@ def load_list(name):
     return d["items"] if isinstance(d, dict) and isinstance(d.get("items"), list) else d
 
 site = json.loads((C / "site.json").read_text(encoding="utf-8"))
-# The catalogue is split one file per medium so the CMS sidebar stays navigable.
-# A work's medium is the file it lives in, not a field on it.
-ARTWORK_FILES = [("artworks-sculpture.json", "Sculpture"),
-                 ("artworks-painting.json", "Painting"),
-                 ("artworks-mixed-media", "Mixed media"),        # a CMS collection: one file per work
-                 ("artworks-drawing.json", "Drawing"),
-                 ("artworks-unsorted.json", "")]
-
-def load_group(src):
-    """A medium is either one list file or a folder of one-file-per-work."""
-    p = C / src
-    if p.is_dir():
-        return [json.loads(f.read_text(encoding="utf-8")) for f in sorted(p.glob("*.json"))]
-    return load_list(src)
-
-works = []
-for _fn, _kind in ARTWORK_FILES:
-    for _a in load_group(_fn):
-        _a["type"] = _kind          # "" for the unsorted file, as before
-        works.append(_a)
+# The catalogue is a CMS collection: one file per work, so it can be searched and
+# sorted in the editor. "order" fixes the sequence the site shows them in; a work
+# without one sorts to the end.
+works = sorted((json.loads(f.read_text(encoding="utf-8")) for f in (C / "artworks").glob("*.json")),
+               key=lambda a: (a.get("order") is None, a.get("order") or 0, a.get("title") or ""))
 
 # The site fetches one catalogue at runtime, so stitch it back together.
 (C / "artworks.json").write_text(json.dumps(works, indent=2, ensure_ascii=False) + '\n', encoding="utf-8")

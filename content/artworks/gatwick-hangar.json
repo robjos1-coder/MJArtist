@@ -1,0 +1,20 @@
+{
+  "order": 550,
+  "title": "Gatwick Hangar",
+  "series": "Mechanical",
+  "stage": "",
+  "for_work": "",
+  "image": "images/gatwick-hangar.jpg",
+  "more_images": [
+    "images/gatwick-hangar-view.jpg"
+  ],
+  "medium": "",
+  "size": "",
+  "year": "",
+  "price": "",
+  "status": "",
+  "hero": false,
+  "featured": false,
+  "notes": "",
+  "type": "Painting"
+}
