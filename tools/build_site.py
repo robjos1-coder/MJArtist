@@ -45,13 +45,20 @@ site = json.loads((C / "site.json").read_text(encoding="utf-8"))
 # A work's medium is the file it lives in, not a field on it.
 ARTWORK_FILES = [("artworks-sculpture.json", "Sculpture"),
                  ("artworks-painting.json", "Painting"),
-                 ("artworks-mixed-media.json", "Mixed media"),
+                 ("artworks-mixed-media", "Mixed media"),        # a CMS collection: one file per work
                  ("artworks-drawing.json", "Drawing"),
                  ("artworks-unsorted.json", "")]
 
+def load_group(src):
+    """A medium is either one list file or a folder of one-file-per-work."""
+    p = C / src
+    if p.is_dir():
+        return [json.loads(f.read_text(encoding="utf-8")) for f in sorted(p.glob("*.json"))]
+    return load_list(src)
+
 works = []
 for _fn, _kind in ARTWORK_FILES:
-    for _a in load_list(_fn):
+    for _a in load_group(_fn):
         _a["type"] = _kind          # "" for the unsorted file, as before
         works.append(_a)
 
