@@ -71,14 +71,15 @@ def walk(node, used, hint="image"):
 def main() -> None:
     IMAGES.mkdir(exist_ok=True)
     used = {p.name for p in IMAGES.iterdir()}
-    works_f = ROOT / "content/artworks.json"
-    doc = json.loads(works_f.read_text(encoding="utf-8"))
-    works = doc["items"] if isinstance(doc, dict) and isinstance(doc.get("items"), list) else doc
-    for w in works:
-        name = w.get("title", "artwork")
-        w["image"] = localise(w.get("image", ""), name, used)
-        w["more_images"] = [localise(u, f"{name} view", used) for u in w.get("more_images") or []]
-    works_f.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    # The catalogue is split one file per medium; artworks.json is generated.
+    for works_f in sorted(ROOT.glob("content/artworks-*.json")):
+        doc = json.loads(works_f.read_text(encoding="utf-8"))
+        works = doc["items"] if isinstance(doc, dict) and isinstance(doc.get("items"), list) else doc
+        for w in works:
+            name = w.get("title", "artwork")
+            w["image"] = localise(w.get("image", ""), name, used)
+            w["more_images"] = [localise(u, f"{name} view", used) for u in w.get("more_images") or []]
+        works_f.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     site_f = ROOT / "content/site.json"
     site = json.loads(site_f.read_text(encoding="utf-8"))

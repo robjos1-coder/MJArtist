@@ -41,7 +41,22 @@ def load_list(name):
     return d["items"] if isinstance(d, dict) and isinstance(d.get("items"), list) else d
 
 site = json.loads((C / "site.json").read_text(encoding="utf-8"))
-works = load_list("artworks.json")
+# The catalogue is split one file per medium so the CMS sidebar stays navigable.
+# A work's medium is the file it lives in, not a field on it.
+ARTWORK_FILES = [("artworks-sculpture.json", "Sculpture"),
+                 ("artworks-painting.json", "Painting"),
+                 ("artworks-mixed-media.json", "Mixed media"),
+                 ("artworks-drawing.json", "Drawing"),
+                 ("artworks-unsorted.json", "")]
+
+works = []
+for _fn, _kind in ARTWORK_FILES:
+    for _a in load_list(_fn):
+        _a["type"] = _kind          # "" for the unsorted file, as before
+        works.append(_a)
+
+# The site fetches one catalogue at runtime, so stitch it back together.
+(C / "artworks.json").write_text(json.dumps(works, indent=2, ensure_ascii=False) + '\n', encoding="utf-8")
 shows = load_list("exhibitions.json")
 teach = json.loads((C / "teaching.json").read_text(encoding="utf-8"))
 courses = json.loads((C / "courses.json").read_text(encoding="utf-8")) if (C / "courses.json").exists() else []
