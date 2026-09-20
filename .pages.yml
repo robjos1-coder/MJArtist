@@ -12,89 +12,96 @@ content:
     type: file
     path: content/artworks.json
     format: json
-    list: true
     description: >-
       Every artwork on the site. Drag to reorder — the order here is the order on the website.
       Tick "Include in home page slideshow" for the pieces that should rotate beside Michael's name.
     fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: type
-        label: What is it?
-        type: select
-        required: true
-        options:
-          values: ["Sculpture", "Drawing", "Painting", "Mixed media"]
-      - name: series
-        label: Series
-        type: select
-        required: true
-        options:
-          values: ["The Creative Figure", "Music", "Abstract & Sculpture", "Mechanical", "Animals", "Landscapes", "Topiary"]
-      - name: stage
-        label: Study or maquette?
-        type: select
-        options:
-          values:
-            - { value: "", label: "No — this is a finished work" }
-            - { value: Study, label: "Study (drawing or sketch for another work)" }
-            - { value: Maquette, label: "Maquette (small model for a sculpture)" }
-      - name: for_work
-        label: Study / maquette for
-        type: string
-        description: "Type the exact title of the finished work, e.g. Shiver. It will be linked on the website."
-      - name: image
-        label: Main photo
-        type: image
-        required: true
-        description: Upload straight from your phone or camera — large photos are resized automatically.
-      - name: more_images
-        label: More photos of the same piece
-        type: image
-        description: Other angles, details or installation shots. Don't make a new artwork for these.
-        options:
-          multiple: true
-      - name: medium
-        label: Medium
-        type: string
-        description: "e.g. Charcoal on paper, Corten steel, Acrylic on plywood"
-      - name: size
-        label: Size
-        type: string
-        description: "e.g. 84 × 59 cm"
-      - name: year
-        label: Year
-        type: string
-      - name: price
-        label: Price
-        type: string
-        description: Leave blank to show no price (visitors can still enquire).
-      - name: status
-        label: Availability
-        type: select
-        options:
-          values:
-            - { value: "", label: "Not shown" }
-            - { value: available, label: Available }
-            - { value: sold, label: Sold }
-            - { value: private, label: Private collection }
-            - { value: nfs, label: Not for sale }
-      - name: hero
-        label: Include in home page slideshow
-        type: boolean
-        default: false
-        description: Pick 6–12 of the most eye-catching pieces. The slideshow starts on a random one each visit.
-      - name: featured
-        label: Show first on home page
-        type: boolean
-        default: false
-        description: Moves this work to the front of the Sculpture or Creative Figure row on the home page.
-      - name: notes
-        label: Notes
-        type: text
-        description: Optional short description shown when the work is opened.
+      - name: items
+        label: false
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title} - {type}, {series}"
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: type
+            label: What is it?
+            type: select
+            required: true
+            options:
+              values: ["Sculpture", "Drawing", "Painting", "Mixed media"]
+          - name: series
+            label: Series
+            type: select
+            required: true
+            options:
+              values: ["The Creative Figure", "Music", "Abstract & Sculpture", "Mechanical", "Animals", "Landscapes", "Topiary"]
+          - name: stage
+            label: Study or maquette?
+            type: select
+            options:
+              values:
+                - { value: "", label: "No — this is a finished work" }
+                - { value: Study, label: "Study (drawing or sketch for another work)" }
+                - { value: Maquette, label: "Maquette (small model for a sculpture)" }
+          - name: for_work
+            label: Study / maquette for
+            type: string
+            description: "Type the exact title of the finished work, e.g. Shiver. It will be linked on the website."
+          - name: image
+            label: Main photo
+            type: image
+            required: true
+            description: Upload straight from your phone or camera — large photos are resized automatically.
+          - name: more_images
+            label: More photos of the same piece
+            type: image
+            description: Other angles, details or installation shots. Don't make a new artwork for these.
+            options:
+              multiple: true
+          - name: medium
+            label: Medium
+            type: string
+            description: "e.g. Charcoal on paper, Corten steel, Acrylic on plywood"
+          - name: size
+            label: Size
+            type: string
+            description: "e.g. 84 × 59 cm"
+          - name: year
+            label: Year
+            type: string
+          - name: price
+            label: Price
+            type: string
+            description: Leave blank to show no price (visitors can still enquire).
+          - name: status
+            label: Availability
+            type: select
+            options:
+              values:
+                - { value: "", label: "Not shown" }
+                - { value: available, label: Available }
+                - { value: sold, label: Sold }
+                - { value: private, label: Private collection }
+                - { value: nfs, label: Not for sale }
+          - name: hero
+            label: Include in home page slideshow
+            type: boolean
+            default: false
+            description: Pick 6–12 of the most eye-catching pieces. The slideshow starts on a random one each visit.
+          - name: featured
+            label: Show first on home page
+            type: boolean
+            default: false
+            description: Moves this work to the front of the Sculpture or Creative Figure row on the home page.
+          - name: notes
+            label: Notes
+            type: text
+            description: Optional short description shown when the work is opened.
 
   - name: exhibitions
     label: Exhibitions

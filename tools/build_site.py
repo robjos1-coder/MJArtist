@@ -41,7 +41,7 @@ def load_list(name):
     return d["items"] if isinstance(d, dict) and isinstance(d.get("items"), list) else d
 
 site = json.loads((C / "site.json").read_text(encoding="utf-8"))
-works = json.loads((C / "artworks.json").read_text(encoding="utf-8"))
+works = load_list("artworks.json")
 shows = load_list("exhibitions.json")
 teach = json.loads((C / "teaching.json").read_text(encoding="utf-8"))
 courses = json.loads((C / "courses.json").read_text(encoding="utf-8")) if (C / "courses.json").exists() else []
