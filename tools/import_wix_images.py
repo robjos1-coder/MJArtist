@@ -52,6 +52,22 @@ def localise(url: str, name: str, used: set) -> str:
     DONE[url] = f"images/{fn}"
     return DONE[url]
 
+def walk(node, used, hint="image"):
+    """Localise every Wix URL anywhere in the tree, whatever key holds it.
+
+    Images sit under assorted keys (hero_image, scale_image, foundry[].image),
+    so walk the whole structure rather than naming keys one by one. Strings
+    that are not Wix URLs pass through localise() unchanged.
+    """
+    if isinstance(node, dict):
+        title = node.get("title")
+        return {k: walk(v, used, title or k.replace("_", "-")) for k, v in node.items()}
+    if isinstance(node, list):
+        return [walk(v, used, hint) for v in node]
+    if isinstance(node, str):
+        return localise(node, hint, used)
+    return node
+
 def main() -> None:
     IMAGES.mkdir(exist_ok=True)
     used = {p.name for p in IMAGES.iterdir()}
@@ -65,8 +81,7 @@ def main() -> None:
 
     site_f = ROOT / "content/site.json"
     site = json.loads(site_f.read_text(encoding="utf-8"))
-    for key in ("hero_image", "about_image"):
-        site[key] = localise(site.get(key, ""), key.replace("_", "-"), used)
+    site = walk(site, used)
     site_f.write_text(json.dumps(site, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 if __name__ == "__main__":
