@@ -1,0 +1,133 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mjartist.com — setup guide</title>
+<style>
+body{margin:0;background:#d4d3cf;color:#141413;font:17px/1.6 Georgia,"Times New Roman",serif}
+main{max-width:780px;margin:0 auto;padding:40px 20px 80px}
+h1,h2,h3{font-family:"Arial Black",Helvetica,Arial,sans-serif;letter-spacing:-.02em;line-height:1.1}
+h1{font-size:2.4rem} h2{font-size:1.5rem;margin-top:2.2em;border-top:1px solid #b9b8b3;padding-top:1em}
+code,pre{font:14px/1.5 ui-monospace,Menlo,Consolas,monospace;background:#e6e5e1;padding:1px 5px}
+pre{padding:12px;overflow-x:auto} blockquote{margin:1em 0;padding:8px 16px;border-left:3px solid #141413;background:#e6e5e1}
+table{border-collapse:collapse;width:100%;font-size:15px} td,th{border-bottom:1px solid #b9b8b3;padding:6px 8px;text-align:left;vertical-align:top}
+a{color:#141413} li{margin:.25em 0}
+</style></head><body><main><h1>mjartist.com — the new site</h1>
+<p>A fast, standalone website for Michael Joseph. It's plain HTML, CSS and JavaScript with no server, database or login page, so there's very little to hack. All the words and pictures live in three files in <code>content/</code>, and Michael edits them through a simple web app called <strong>Pages CMS</strong>. Every save goes live about a minute later.</p>
+<pre><code>index.html  work.html  about.html  exhibitions.html  contact.html   ← the pages
+content/artworks.json      ← every artwork (title, series, photo, medium, size, price…)
+content/exhibitions.json   ← shows (upcoming / on now / past is worked out automatically)
+content/site.json          ← statement, biography, timeline, contact details
+images/                    ← photos (uploads land here)
+.pages.yml                 ← what the editing app shows
+.github/workflows/         ← publishes the site, shrinks big photos, imports from Wix
+tools/                     ← the scripts those workflows run
+_headers                   ← security headers (used if you host on Cloudflare/Netlify)
+</code></pre>
+<hr />
+<h2>How the site is built</h2>
+<p>Every time something is saved, a small build script (<code>tools/build_site.py</code>) writes out every page as plain HTML, including <strong>one page per artwork</strong> (<code>art/tryst.html</code> and so on), plus the sitemap and search data. Then GitHub publishes it. You never run this yourself; <code>preview.bat</code> runs it for you on your computer.</p>
+<p><strong>Don't edit the <code>.html</code> files by hand.</strong> They're regenerated on every publish. Change the content in the editor, or the layout in <code>tools/build_site.py</code>, <code>assets/css/style.css</code> and <code>assets/js/site.js</code>.</p>
+<p>The films are in <code>media/</code>. The looping clips (Bean Pod, the pour) have no sound. The full casting film keeps its soundtrack but starts muted; visitors can turn the sound on with the film's own controls. The loops only play while on screen, have a pause button, and show a still image to anyone whose device is set to reduce motion.</p>
+<h2>1. Preview it on your computer</h2>
+<p>Double-click <strong><code>preview.bat</code></strong> (Windows), or run <code>./preview.sh</code> on a Mac. Your browser opens at <code>http://localhost:8000</code>. It needs Python installed. Opening <code>index.html</code> directly won't work, because browsers block pages from reading the content files that way.</p>
+<p>Until step 4 is done, the artwork photos load from Wix's servers.</p>
+<h2>2. Put it on GitHub</h2>
+<ol>
+<li>Make a GitHub account for the site, or use yours. <strong>Turn on two-factor sign-in straight away</strong> (Settings → Password and authentication; a passkey is best).</li>
+<li>Create a new repository called <code>mjartist</code>. Private is fine.</li>
+<li>Upload everything in this folder, including the hidden <code>.github</code> folder and <code>.pages.yml</code>. The easy way is GitHub Desktop: add the folder as a repository, then publish it.</li>
+</ol>
+<h2>3. Turn on hosting (GitHub Pages)</h2>
+<ol>
+<li>In the repo, go to <strong>Settings → Pages → Build and deployment → Source: GitHub Actions</strong>.</li>
+<li>Open the <strong>Actions</strong> tab. "Publish site" runs on every change. When it's green, the site is live at <code>https://&lt;your-username&gt;.github.io/mjartist/</code>.</li>
+<li><strong>Custom domain:</strong> go to Settings → Pages → Custom domain → <code>www.mjartist.com</code>. Then, wherever the domain's DNS is managed:</li>
+<li><code>CNAME</code> record: <code>www</code> → <code>&lt;your-username&gt;.github.io</code></li>
+<li><code>A</code> records for the bare domain <code>mjartist.com</code>: <code>185.199.108.153</code>, <code>185.199.109.153</code>, <code>185.199.110.153</code>, <code>185.199.111.153</code></li>
+<li>When the certificate appears, tick <strong>Enforce HTTPS</strong>.</li>
+<li><strong>Verify the domain</strong> (this blocks anyone else from hijacking it on GitHub): your profile Settings → Pages → Add a domain → add the TXT record GitHub gives you.</li>
+</ol>
+<blockquote>
+<p>Private repos can only use GitHub Pages on a paid GitHub plan. With a free account, make the repo public. Nothing in it is secret: the contact-form key is designed to be public, and there are no passwords anywhere.</p>
+</blockquote>
+<h2>4. Copy the photos off Wix (do this before cancelling Wix)</h2>
+<p>Go to <strong>Actions → Publish site → Run workflow</strong>, tick <strong>"Import images from Wix"</strong>, and run it. It downloads all 130 originals and resizes them to web size. It then removes hidden camera data (like GPS location), saves them into <code>images/</code>, and updates the content files. After that the site no longer depends on Wix at all.</p>
+<p>Afterwards you can tighten the security policy by removing <code>https://static.wixstatic.com</code> from the Content-Security-Policy line in the five <code>.html</code> files and in <code>_headers</code>.</p>
+<h2>5. Set up the editor for Michael</h2>
+<ol>
+<li>Michael makes his own free GitHub account, <strong>with two-factor sign-in on</strong>.</li>
+<li>Repo → Settings → Collaborators → invite him (Write access). This gives him this one repository only.</li>
+<li>Go to <strong>app.pagescms.org</strong> and sign in with GitHub. When it asks, install the Pages CMS app on <strong>only the <code>mjartist</code> repository</strong>, not "All repositories".</li>
+<li>Michael bookmarks app.pagescms.org, signs in and picks <code>mjartist</code>. He'll see three sections:</li>
+<li><strong>Artworks</strong>: add a work, upload a photo (straight from a phone is fine; big photos shrink automatically), choose <em>What is it?</em> (Sculpture / Drawing / Painting / Mixed media) and the series, then fill in medium, size, price and availability. Other photos of the same piece go in <em>More photos</em>. A drawing or small model made on the way to a finished piece is marked <em>Study</em> or <em>Maquette</em> and linked to it (see <code>CHECK-WITH-MICHAEL.md</code> for the naming convention). Drag to reorder. Tick <em>Include in home page slideshow</em> for the 6–12 pieces that rotate beside his name, and <em>Show first on home page</em> to bring a work to the front of the Sculpture or Creative Figure row.</li>
+<li><strong>Exhibitions</strong>: add the venue and the open and close dates. The site shows <em>Upcoming</em>, <em>On now</em> or <em>Past</em> by itself.</li>
+<li><strong>Course dates</strong>: add a course with its date and booking link. Past courses drop off by themselves. Leave the date blank to show "coming soon".</li>
+<li><strong>Courses &amp; tuition</strong>: the Courses page text, the ways to learn, student comments, the intro video and the Art Junction links.</li>
+<li><strong>About, contact &amp; home page</strong>: statement, biography, timeline, the Sculpture and Creative Figure page text, the foundry steps, the scale feature, email, phone and Instagram. The home page story (<em>From line to bronze</em>) is also here; each chapter names an artwork, so its picture updates automatically.</li>
+<li>Press <strong>Save</strong>. The site updates in about a minute.</li>
+</ol>
+<p>Adding a new <em>series</em> means adding its name to the list under <code>series</code> in <code>.pages.yml</code>.</p>
+<h2>Getting found on Google (do this once the site is live)</h2>
+<p>The site already does the technical part:
+- A proper title and description on every page.
+- A page for every artwork, with its image, medium and size.
+- Structured data that tells Google this is an artist, with artworks, exhibitions and a course.
+- A sitemap that includes every image.
+- Share previews for WhatsApp, Facebook and LinkedIn.</p>
+<p>What only you can do:
+1. <strong>Google Search Console</strong> (search.google.com/search-console): add <code>mjartist.com</code> as a Domain property, verify it with the TXT record it gives you (added in Wix → Domains → DNS), then go to <em>Sitemaps</em> and submit <code>https://www.mjartist.com/sitemap.xml</code>.
+2. <strong>Bing Webmaster Tools:</strong> sign in and choose "Import from Google Search Console". It takes two minutes.
+3. <strong>Ask for links:</strong> Art Junction, Surrey Sculpture Society, Hannah Peschar, Oxmarket Gallery, the Guild of Aviation Artists and each exhibition venue.
+4. <strong>Keep filling in details:</strong> medium, size, year and a sentence of notes on the key works. Search engines read those words.</p>
+<h2>Fonts and licensing</h2>
+<p>All three typefaces are released under the SIL Open Font License, so they're free for commercial use and self-hosting forever. There's no fee, no account and nothing to expire. The licence files are in the fonts' original packages on Google Fonts.
+- <strong>Syne</strong> (the big headings), by Bonjour Monde, commissioned for the Synesthésies art centre in Paris
+- <strong>Newsreader</strong> (body text), by Production Type
+- <strong>IBM Plex Mono</strong> (the small labels), by IBM</p>
+<p>Free means anyone else can use them too. For something no one else has, the strongest option is to use <strong>Michael's own signature</strong> as the logo: photograph it on white paper and it can be traced into a crisp vector wordmark.</p>
+<h2>6. Contact form and spam (optional upgrade)</h2>
+<p><strong>Default:</strong> the form opens the visitor's own email app with the message ready to send. No service is involved, so there is nothing for spammers to abuse.</p>
+<p><strong>To have messages delivered straight to Michael's inbox:</strong>
+1. Get a free access key at <strong>web3forms.com</strong>, using Michael's email address.
+2. Paste it into the editor: <strong>About, contact &amp; home page → Contact form key</strong>.</p>
+<p><strong>Spam protection, in layers (all free):</strong>
+1. <strong>Two hidden "honeypot" fields</strong> that people never see but bots fill in. Those messages are silently discarded, and the bot is shown a normal "thank you" so it doesn't try again.
+2. <strong>A time check.</strong> A form completed in under 4 seconds is treated as a bot.
+3. <strong>Content checks.</strong> Messages with HTML or link code, more than two web links, a missing message or an invalid email are stopped, with a plain explanation for real visitors.
+4. <strong>One message a minute</strong> from the same browser.
+5. <strong>Web3Forms' own server-side spam filter</strong> screens everything that reaches them.
+6. <strong>An optional "I am human" check (hCaptcha).</strong> Tick <strong>Contact form — add "I am human" check</strong> in the editor if spam still gets through. It adds one small click for visitors, so it's off by default.</p>
+<h2>7. Instagram on the home page</h2>
+<p>The home page Instagram section always links to <strong>@michael.joseph.artist</strong>. There are two ways to show posts on the site as well:</p>
+<p><strong>A. Latest posts, automatically (recommended)</strong>
+1. Sign up free at <strong>behold.so</strong> and connect Michael's Instagram account.
+2. Create a feed, choose <strong>JSON</strong> as the type, and copy its address (it looks like <code>https://feeds.behold.so/AbC123</code>).
+3. Paste it into the editor: <strong>About, contact &amp; home page → Instagram feed</strong>.</p>
+<p>The site then shows the latest 6–8 posts as a grid (captions appear on hover). It refreshes every morning, because GitHub rebuilds the site daily.</p>
+<p>The pictures are copied onto the website when it's built, so visitors' browsers never contact Instagram and there's no Instagram tracking. Behold's free plan (1 feed, 6 posts, daily updates) is enough.</p>
+<p><strong>B. Chosen posts, with no sign-up</strong></p>
+<p>Paste individual post links (e.g. <code>https://www.instagram.com/p/DZXhu2TqPc1/</code>) into <strong>Chosen Instagram posts</strong>. They appear as Instagram's own embeds, with likes and captions. This loads Instagram's script for visitors, and the security policy allows exactly that and nothing wider.</p>
+<p>If both are filled in, the automatic feed is used.</p>
+<blockquote>
+<p>On a <strong>public</strong> GitHub repository, GitHub pauses the daily rebuild after 60 days with no changes. Any edit restarts it, or you can switch it back on under the <strong>Actions</strong> tab.</p>
+</blockquote>
+<h2>Security: what's built in, and the checklist</h2>
+<p><strong>Built into the site</strong>
+- There's no server, database, admin page or plugins on the website itself, so the common ways sites get hacked don't apply.
+- A strict Content-Security-Policy is set in every page. Only the site's own files run, plus exactly three named services, each allowed only for its job: <strong>Instagram</strong> (post embeds, if you choose them), <strong>Web3Forms/hCaptcha</strong> (the contact form, if switched on) and <strong>YouTube's privacy mode</strong> (the Art Junction video, after a click). There are no trackers or analytics, and the fonts are self-hosted, which keeps UK GDPR simple.
+- All text from the content files is inserted as plain text, never as HTML. Links are checked to be <code>https://</code> (or <code>mailto:</code>), and images must come from <code>images/</code> (or Wix during the changeover). A typo, or even a malicious edit, can't inject code.
+- External links open with <code>rel="noopener noreferrer"</code>. The form has length limits and a spam honeypot.
+- Uploaded photos have camera metadata (GPS location, device) removed automatically.
+- The publishing workflow pins every GitHub Action to an exact commit and the Pillow library to an exact file hash, gives each step only the permissions it needs, and publishes only the public website files. The tools, workflows and settings are never served.
+- <code>/.well-known/security.txt</code> tells anyone who finds a problem how to report it.
+- The Art Junction introduction video is click-to-play. Nothing loads from YouTube (so no Google cookies) until a visitor presses play, and even then it plays in YouTube's privacy-enhanced mode inside a locked-down frame. The security policy allows only YouTube's privacy-enhanced player to be embedded, and only its thumbnail images.
+- The automatic Instagram feed is fetched when the site is built and served from the site itself, so it adds no tracking. Only the optional chosen-post embeds load Instagram's own script.</p>
+<p><strong>What you need to do (these accounts are where the real risk is)</strong>
+- [ ] Two-factor sign-in (passkey or authenticator app, not SMS) on <strong>every</strong> GitHub account with access
+- [ ] Pages CMS app installed on the <code>mjartist</code> repo only
+- [ ] Michael's account has Write access only. You stay the only Admin.
+- [ ] Optional: Settings → Branches → protect <code>main</code> from deletion and force-push
+- [ ] Domain verified in GitHub Pages settings (step 3.4)
+- [ ] At the domain registrar: two-factor sign-in on, <strong>transfer lock</strong> on, auto-renew on, contact email current
+- [ ] Remove the Wix entry from the security policy once images are imported (step 4)</p>
+<p><strong>Where the domain lives.</strong> If mjartist.com was bought through Wix, you can keep it there and just change the DNS records above. For fewer eggs in Wix's basket, transfer it to Cloudflare Registrar (at-cost pricing, free DNSSEC).</p>
+<h2>Optional: host on Cloudflare instead</h2>
+<p>GitHub Pages is fine for a portfolio. Cloudflare adds full security headers (the <code>_headers</code> file: HSTS, anti-framing and the rest), DDoS shielding and free privacy-friendly visitor stats, but it's one more account to secure. In the Cloudflare dashboard → Workers &amp; Pages → Create → import the same GitHub repo, with no build command and output directory <code>/</code>. The <code>.assetsignore</code> file keeps the tools and settings from being published. Pages CMS works exactly the same. Then turn off GitHub Pages.</p></main></body></html>

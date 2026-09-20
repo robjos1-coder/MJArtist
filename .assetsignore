@@ -1,0 +1,13 @@
+.git
+.github
+tools
+README.md
+SETUP-GUIDE.html
+.pages.yml
+.gitignore
+.assetsignore
+preview.bat
+preview.sh
+wrangler.jsonc
+CNAME
+CHECK-WITH-MICHAEL.md

@@ -1,0 +1,301 @@
+# Pages CMS configuration — https://pagescms.org
+# This file decides what Michael sees when he logs in to edit the website.
+media:
+  input: images
+  output: /images
+  rename: safe
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: artworks
+    label: Artworks
+    type: file
+    path: content/artworks.json
+    format: json
+    list: true
+    description: >-
+      Every artwork on the site. Drag to reorder — the order here is the order on the website.
+      Tick "Include in home page slideshow" for the pieces that should rotate beside Michael's name.
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: type
+        label: What is it?
+        type: select
+        required: true
+        options:
+          values: ["Sculpture", "Drawing", "Painting", "Mixed media"]
+      - name: series
+        label: Series
+        type: select
+        required: true
+        options:
+          values: ["The Creative Figure", "Music", "Abstract & Sculpture", "Mechanical", "Animals", "Landscapes", "Topiary"]
+      - name: stage
+        label: Study or maquette?
+        type: select
+        options:
+          values:
+            - { value: "", label: "No — this is a finished work" }
+            - { value: Study, label: "Study (drawing or sketch for another work)" }
+            - { value: Maquette, label: "Maquette (small model for a sculpture)" }
+      - name: for_work
+        label: Study / maquette for
+        type: string
+        description: "Type the exact title of the finished work, e.g. Shiver. It will be linked on the website."
+      - name: image
+        label: Main photo
+        type: image
+        required: true
+        description: Upload straight from your phone or camera — large photos are resized automatically.
+      - name: more_images
+        label: More photos of the same piece
+        type: image
+        description: Other angles, details or installation shots. Don't make a new artwork for these.
+        options:
+          multiple: true
+      - name: medium
+        label: Medium
+        type: string
+        description: "e.g. Charcoal on paper, Corten steel, Acrylic on plywood"
+      - name: size
+        label: Size
+        type: string
+        description: "e.g. 84 × 59 cm"
+      - name: year
+        label: Year
+        type: string
+      - name: price
+        label: Price
+        type: string
+        description: Leave blank to show no price (visitors can still enquire).
+      - name: status
+        label: Availability
+        type: select
+        options:
+          values:
+            - { value: "", label: "Not shown" }
+            - { value: available, label: Available }
+            - { value: sold, label: Sold }
+            - { value: private, label: Private collection }
+            - { value: nfs, label: Not for sale }
+      - name: hero
+        label: Include in home page slideshow
+        type: boolean
+        default: false
+        description: Pick 6–12 of the most eye-catching pieces. The slideshow starts on a random one each visit.
+      - name: featured
+        label: Show first on home page
+        type: boolean
+        default: false
+        description: Moves this work to the front of the Sculpture or Creative Figure row on the home page.
+      - name: notes
+        label: Notes
+        type: text
+        description: Optional short description shown when the work is opened.
+
+  - name: exhibitions
+    label: Exhibitions
+    type: file
+    path: content/exhibitions.json
+    format: json
+    list: true
+    description: >-
+      Add each show with a start and end date. The website works out by itself whether a show
+      is upcoming, on now or past — nothing needs deleting.
+    fields:
+      - { name: venue, label: Venue, type: string, required: true }
+      - { name: title, label: Exhibition name, type: string }
+      - { name: address, label: Address, type: string }
+      - { name: start, label: Opens, type: date, required: true, options: { format: yyyy-MM-dd } }
+      - { name: end, label: Closes, type: date, required: true, options: { format: yyyy-MM-dd } }
+      - { name: hours, label: Opening hours, type: string }
+      - { name: link, label: Website link, type: string, description: "Full address starting https://" }
+      - { name: notes, label: Notes, type: string }
+      - { name: date_text, label: Date shown instead (optional), type: string, description: "e.g. '2017' when exact dates are unknown" }
+
+  - name: teaching
+    label: Courses & tuition
+    type: file
+    path: content/teaching.json
+    format: json
+    description: The Courses page. Bookings happen on Art Junction, so update the links there if they change.
+    fields:
+      - { name: title, label: Heading, type: string }
+      - { name: lede, label: Opening line, type: text }
+      - { name: intro, label: Introduction, type: text, description: "Leave a blank line between paragraphs." }
+      - { name: video_id, label: YouTube video ID, type: string, description: "The 11 characters after v= in a YouTube link, e.g. gUBhgbFW_Hg" }
+      - { name: video_title, label: Video title, type: string }
+      - name: offers
+        label: Ways to learn
+        type: object
+        list:
+          collapsible:
+            summary: "{title}"
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: detail, label: When / where, type: string }
+          - { name: text, label: Description, type: text }
+          - { name: link, label: Link, type: string }
+          - { name: link_text, label: Link wording, type: string }
+      - { name: quote, label: Quotation from Michael, type: text }
+      - name: testimonials
+        label: Student comments
+        type: object
+        list:
+          collapsible:
+            summary: "{who}"
+        fields:
+          - { name: text, label: Comment, type: text }
+          - { name: who, label: Who said it, type: string }
+      - { name: courses_link, label: Upcoming courses link, type: string }
+      - { name: profile_link, label: Art Junction profile link, type: string }
+      - { name: booking_email, label: Booking email, type: string }
+
+  - name: courses
+    label: Course dates
+    type: file
+    path: content/courses.json
+    format: json
+    list: true
+    description: Individual courses shown under "Upcoming dates". Leave the date empty for "coming soon"; past courses disappear automatically.
+    fields:
+      - { name: title, label: Course, type: string, required: true }
+      - { name: format, label: Format, type: string, description: "e.g. In the studio · 2-day workshop" }
+      - { name: start, label: Starts, type: date, default: "", options: { format: yyyy-MM-dd } }
+      - { name: date_text, label: Dates as shown (optional), type: string, description: "e.g. Sat 14 & Sun 15 March, or New dates to be announced" }
+      - { name: time, label: Times, type: string }
+      - { name: price, label: Price, type: string }
+      - { name: description, label: Description, type: text }
+      - { name: link, label: Booking link, type: string }
+
+  - name: site
+    label: About, contact & home page
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: name, label: Artist name, type: string, required: true }
+      - { name: site_url, label: "Website address (advanced)", type: string, description: "https://www.mjartist.com — used for search engines and sharing" }
+      - { name: disciplines, label: Disciplines line, type: string }
+      - { name: location, label: Location, type: string }
+      - { name: tagline, label: Search-engine description, type: string }
+      - { name: intro, label: Home page introduction, type: text }
+      - { name: hero_image, label: Home page main image, type: image }
+      - { name: hero_caption, label: Main image caption, type: string }
+      - { name: quote, label: Home page quotation, type: text }
+      - { name: about_quote, label: About page quotation, type: text }
+      - { name: statement_title, label: Statement heading, type: string }
+      - { name: statement, label: Artist statement, type: text, description: "Leave a blank line between paragraphs." }
+      - { name: materials, label: Materials (comma separated), type: string }
+      - { name: figure_title, label: Creative Figure page heading, type: string }
+      - { name: figure_lede, label: Creative Figure opening line, type: text }
+      - { name: figure_quote, label: Creative Figure quotation, type: text }
+      - { name: figure_statement, label: Creative Figure text, type: text, description: "Leave a blank line between paragraphs." }
+      - { name: sculpture_quote, label: Sculpture page quotation, type: text }
+      - name: story
+        label: Home page story ("From line to bronze")
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: quote, label: Quotation, type: text }
+          - name: chapters
+            label: Chapters
+            type: object
+            list:
+              collapsible:
+                summary: "{title}"
+            fields:
+              - { name: title, label: Chapter heading, type: string }
+              - { name: work, label: Artwork title, type: string, description: "Exact title of an artwork; its main photo is used" }
+              - { name: image, label: Or a picture, type: image, description: "Only if the chapter isn't about one artwork" }
+              - { name: video, label: "Or a film file (advanced)", type: string, description: "e.g. media/foundry-pour.mp4" }
+              - { name: text, label: Text, type: text }
+      - name: foundry
+        label: The foundry (Sculpture page)
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: lede, label: Introduction, type: text }
+          - { name: film_title, label: Film caption, type: string }
+          - { name: loop_video, label: "Looping film file (advanced)", type: string, description: "e.g. media/foundry-pour.mp4" }
+          - { name: loop_poster, label: Looping film still, type: image }
+          - { name: film, label: "Full film file (advanced)", type: string, description: "e.g. media/bronze-casting.mp4" }
+          - { name: film_poster, label: Full film still, type: image }
+          - name: steps
+            label: Casting steps
+            type: object
+            list:
+              collapsible:
+                summary: "{title}"
+            fields:
+              - { name: image, label: Picture, type: image }
+              - { name: title, label: Step, type: string }
+              - { name: text, label: Description, type: text }
+      - { name: bean_pod_video, label: "Sculpture page film file (advanced)", type: string, description: "e.g. media/bean-pod.mp4" }
+      - { name: bean_pod_poster, label: Sculpture page film still, type: image }
+      - { name: bean_pod_caption, label: Sculpture page film caption, type: string }
+      - { name: studio_image, label: Studio photo, type: image }
+      - { name: studio_title, label: Studio heading, type: string }
+      - { name: studio_text, label: Studio text, type: text }
+      - name: spotlight
+        label: Sculpture page spotlight (currently Crest)
+        type: object
+        fields:
+          - { name: work, label: Artwork title, type: string }
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: link_text, label: Extra link wording, type: string }
+          - { name: link, label: Extra link address, type: string }
+      - { name: reflection_feature, label: '"One piece, two viewpoints" — artwork title', type: string }
+      - { name: reflection_text, label: '"One piece, two settings" — text', type: text }
+      - { name: sculpture_title, label: Sculpture page heading, type: string }
+      - { name: sculpture_lede, label: Sculpture page opening line, type: text }
+      - { name: sculpture_statement, label: Sculpture statement, type: text, description: "Leave a blank line between paragraphs." }
+      - { name: scale_work, label: Scale feature — artwork title, type: string, description: "The work shown beside a person for scale, e.g. Tryst" }
+      - { name: scale_image, label: Scale feature — photo, type: image, description: "A photo with a person beside the work" }
+      - { name: reel_first, label: Home slideshow — first work, type: string, description: "Exact title of the work shown first on the home page (it uses the scale photo above)" }
+      - { name: highlights, label: All work — Highlights, type: string, list: true, description: "Exact titles, in order, shown under Highlights at the top of All work" }
+      - { name: scale_graphic, label: Scale feature — drawing (optional), type: image, description: "A greyscale maquette-and-monument drawing. When set, it replaces the automatic diagram." }
+      - { name: scale_height_m, label: Scale feature — height in metres, type: number }
+      - { name: scale_label, label: Scale feature — height label, type: string, description: "e.g. Over 4 m" }
+      - { name: process_work, label: "'From line to form' — artwork title", type: string, description: "A finished work that has studies or maquettes linked to it" }
+      - name: sculpture_materials
+        label: Sculpture materials
+        type: object
+        list:
+          collapsible:
+            summary: "{name}"
+        fields:
+          - { name: name, label: Material, type: string }
+          - { name: text, label: Description, type: text }
+      - { name: about_image, label: About page image, type: image }
+      - { name: biography, label: Biography, type: text, description: "Leave a blank line between paragraphs." }
+      - name: timeline
+        label: Timeline
+        type: object
+        list:
+          collapsible:
+            summary: "{year} {text}"
+        fields:
+          - { name: year, label: Year, type: string }
+          - { name: text, label: Event, type: string }
+      - { name: collections, label: Paintings acquired by, type: text }
+      - { name: email, label: Email, type: string, required: true }
+      - { name: phone, label: Phone, type: string }
+      - { name: instagram, label: Instagram link, type: string, description: "Full address starting https://www.instagram.com/" }
+      - { name: instagram_handle, label: Instagram name as shown, type: string, description: "e.g. @michael.joseph.artist" }
+      - { name: instagram_feed_url, label: Instagram feed (Behold JSON address), type: string, description: "Optional. e.g. https://feeds.behold.so/AbC123 — shows the latest posts on the home page, refreshed daily." }
+      - name: instagram_posts
+        label: Chosen Instagram posts (if no feed)
+        type: string
+        list: true
+        description: "Optional. Paste post links such as https://www.instagram.com/p/DZXhu2TqPc1/ — shown as Instagram's own embeds."
+      - { name: sales_note, label: Sales note, type: text }
+      - { name: form_access_key, label: Contact form key (Web3Forms), type: string, description: "Optional. Leave blank and the contact form opens the visitor's email app instead." }
+      - { name: form_captcha, label: Contact form — add "I am human" check, type: boolean, default: false, description: "Only used with a Web3Forms key. Turn on if spam gets through." }
