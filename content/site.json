@@ -78,7 +78,7 @@
     }
   ],
   "instagram_handle": "@michael.joseph.artist",
-  "scale_image": "https://static.wixstatic.com/media/c7e04c_1aaf16844beb44eeb6a325149c50b855~mv2_d_2947_2210_s_2.jpg",
+  "scale_image": "images/scale-image.jpg",
   "site_url": "https://www.mjartist.com",
   "about_quote": "If a writer is able to use a range of grammar to present the reader with a perception, then so too can an artist.",
   "figure_title": "The Creative Figure",
@@ -132,7 +132,7 @@
         "text": "The raw bronze is chased — refined and finished with hand tools — and then coloured with a patina, applied with heat and chemistry, that gives the surface its final depth."
       },
       {
-        "image": "https://static.wixstatic.com/media/c7e04c_369285bca8844dbcafc2401d9ecca93d~mv2.jpg",
+        "image": "images/suzanne-finished.jpg",
         "title": "Suzanne, finished",
         "fit": "contain",
         "text": "The finished bronze. Suzanne is one of the figures cast this way, from clay to patina entirely in Michael's own foundry."
