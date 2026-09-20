@@ -114,11 +114,11 @@ content:
             summary: "{venue} - {start}"
         fields:
           - { name: venue, label: Venue, type: string, required: true }
-          - { name: title, label: Exhibition name, type: string }
+          - { name: title, label: Exhibition name, type: text }
           - { name: address, label: Address, type: text }
           - { name: start, label: Opens, type: date, required: true, options: { format: yyyy-MM-dd } }
           - { name: end, label: Closes, type: date, required: true, options: { format: yyyy-MM-dd } }
-          - { name: hours, label: Opening hours, type: string }
+          - { name: hours, label: Opening hours, type: text }
           - { name: link, label: Website link, type: string, description: "Full address starting https://" }
           - { name: notes, label: Notes, type: text }
           - { name: date_text, label: Date shown instead (optional), type: string, description: "e.g. '2017' when exact dates are unknown" }
