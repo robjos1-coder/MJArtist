@@ -159,7 +159,7 @@ def story_html():
         src = c.get("image") or (a["image"] if a else "")
         alt_t = alt(a) if a else c.get("title", "")
         if c.get("video"):
-            media = (f'<video data-story-video muted loop playsinline preload="none" poster="{E(img(src, 1400))}" aria-label="{E(c.get("title"))}">'
+            media = (f'<video data-story-video muted loop playsinline preload="metadata" poster="{E(img(src, 1400))}" aria-label="{E(c.get("title"))}">'
                      f'<source src="{E(c["video"])}" type="video/mp4"></video>')
         else:
             media = f'<img src="{E(img(src, 1400))}" alt="{E(alt_t)}" loading="lazy">'
@@ -381,7 +381,7 @@ def page(path, key, title, desc, main, og=None, ld=None):
 
 
 def loop_video(src, poster, label_text, cls="", R=""):
-    return (f'<div class="vid {cls}"><video data-loop muted loop playsinline preload="none" poster="{E(R + poster)}" aria-label="{E(label_text)}">'
+    return (f'<div class="vid {cls}"><video data-loop muted loop playsinline preload="metadata" poster="{E(R + poster)}" aria-label="{E(label_text)}">'
             f'<source src="{E(R + src)}" type="video/mp4"></video></div>')
 
 

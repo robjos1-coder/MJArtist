@@ -374,6 +374,17 @@
   }
 
   // ---------- silent looping films: play only while on screen; a button to pause; still image if motion is reduced ----------
+  // iOS will not start a video that has nothing buffered: play() rejects, and
+  // every call site was discarding that rejection. Load first, then retry once
+  // the data arrives.
+  function playSoon(v) {
+    v.muted = true;
+    if (v.preload !== "auto") { v.preload = "auto"; if (!v.readyState) v.load(); }
+    const again = () => { const r = v.play(); if (r && r.catch) r.catch(() => {}); };
+    const p = v.play();
+    if (p && p.catch) p.catch(() => v.addEventListener("canplay", again, { once: true }));
+  }
+
   function loops() {
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.querySelectorAll("video[data-loop]").forEach((v) => {
@@ -382,14 +393,14 @@
       let userPaused = reduce;
       const btn = el("button", { type: "button", class: "vid-toggle", "aria-label": reduce ? "Play film" : "Pause film", text: reduce ? "Play" : "Pause" });
       const sync = () => { btn.textContent = v.paused ? "Play" : "Pause"; btn.setAttribute("aria-label", v.paused ? "Play film" : "Pause film"); };
-      btn.addEventListener("click", () => { if (v.paused) { userPaused = false; v.play().catch(() => {}); } else { userPaused = true; v.pause(); } });
+      btn.addEventListener("click", () => { if (v.paused) { userPaused = false; playSoon(v); } else { userPaused = true; v.pause(); } });
       v.addEventListener("play", sync); v.addEventListener("pause", sync);
       wrap.append(btn);
       if ("IntersectionObserver" in window) {
         new IntersectionObserver((es) => es.forEach((e) => {
-          if (e.isIntersecting && !userPaused) { v.preload = "auto"; v.play().catch(() => {}); } else if (!e.isIntersecting) v.pause();
+          if (e.isIntersecting && !userPaused) playSoon(v); else if (!e.isIntersecting) v.pause();
         }), { threshold: 0.2 }).observe(v);
-      } else if (!userPaused) v.play().catch(() => {});
+      } else if (!userPaused) playSoon(v);
     });
   }
 
@@ -423,7 +434,7 @@
     const set = (i) => {
       figs.forEach((f) => {
         const on = Number(f.dataset.i) === i; f.classList.toggle("on", on);
-        const v = $("video", f); if (v) { if (on && !reduce) { v.muted = true; v.preload = "auto"; v.play().catch(() => {}); } else v.pause(); }
+        const v = $("video", f); if (v) { if (on && !reduce) playSoon(v); else v.pause(); }
       });
       steps.forEach((s) => s.classList.toggle("on", Number(s.dataset.i) === i));
     };

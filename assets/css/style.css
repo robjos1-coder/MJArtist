@@ -139,6 +139,17 @@ a:hover { color: var(--graphite); }
 .show-reel.paused .reel-progress i { animation-play-state: paused; }
 @keyframes reel { to { transform: scaleX(1); } }
 
+/* Phones: the hero filled the whole first screen, pushing the reel out of
+   sight. Tighten the type and spacing so the work shows on first load. */
+@media (max-width: 600px) {
+  .hero { padding-block: 12px 24px; }
+  .hero-grid { gap: 20px; }
+  .hero-text { gap: 12px; }
+  .hero-text p.intro { font-size: 1.2rem; }
+  /* the frame takes each image's own shape now, so a floor only letterboxes it */
+  .reel-frame { min-height: 0; }
+}
+
 /* ---------- the two strands: sculpture room + figure ---------- */
 .room { padding-block: clamp(56px, 9vw, 128px); }
 .room.stone { background: var(--stone) var(--grain); color: var(--stone-ink); --ink: var(--stone-ink); --graphite: var(--stone-grey); --rule: var(--stone-rule); --paper-2: #242422; --line: var(--stone-ink); --on-line: var(--stone); }
