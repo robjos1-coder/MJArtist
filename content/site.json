@@ -4,13 +4,13 @@
   "location": "West Sussex, England",
   "tagline": "Michael Joseph — British sculptor and artist in West Sussex. Corten and welded steel, bronze cast in his own foundry, and figurative drawing and painting.",
   "intro": "An experimental artist looking for relationships and connections — how a line fits with a shape, or how a space might contribute to a form. Charcoal and paint; welded steel and Jesmonite; and bronze poured in his own foundry.",
-  "hero_image": "https://static.wixstatic.com/media/c7e04c_e0c56aa86b834ec79460b7194dacd062~mv2_d_3663_4385_s_4_2.jpg",
+  "hero_image": "images/stroke-of-red.jpg",
   "hero_caption": "Stroke of Red",
   "quote": "I enjoy taking liberties with reality, so that our minds are stimulated and something much deeper inside is unlocked. I like my work to bite.",
   "statement_title": "A Different Perspective",
   "statement": "For Michael Joseph the purpose of art is not to create a photo-realistic image of life. His work is a translation into artistic values like a simple line, shape or space to such an extent that it becomes stimulating in its own right. The resulting simplicity intrigues, leaving a deeper and more lasting impression.\n\nIn this way Michael is able to explore and experiment on any subject. He particularly enjoys the figure and working from life. It provides a framework for developing thoughts and skills rather like a musician practising scales and arpeggios. He will take a nude and dress it again, not in clothes but in his own artistic language. Rather than accurately copying the figure, his approach adds mystery and interest so that it will command attention.\n\nMichael will jump from one medium to another responding to the previous piece of work, reforming and editing as he goes. For example, from a charcoal drawing he might find a sculptural element. The three-dimensional piece might then suggest an idea in paint. As the method of working progresses, the image breaks further away from the representational and into abstraction.\n\nHis work conveys emotions or actions. The titles are often verbs or adjectives rather than nouns. He says that if a writer is able to use a range of grammar to present the reader with a perception then so too can an artist.\n\nMichael is unrestricted in his use of medium. Works include charcoal, inks, paint, metal, carbon fibre, mirrors or shadows. Equally the tools he uses range from a simple brush to a computer-controlled milling machine. There are no limits when working creatively and the outcome is diverse and eclectic.",
   "materials": "Charcoal, Inks, Acrylic, Oil, Corten steel, Foundry bronze, Jesmonite, Carbon fibre, Mirrors, Shadows",
-  "about_image": "https://static.wixstatic.com/media/c7e04c_0ada85733dcf4a0ead8bd0eae99fbdc4~mv2_d_4358_2865_s_4_2.jpg",
+  "about_image": "images/about-image.jpg",
   "biography": "Born an identical twin, Michael Joseph has always been spatially aware. From an early age he was competent at drawing and using his hands to make things from all sorts of materials. At school in the 1960s he was runner-up in a national car design competition with Vauxhall — his entry was a hatchback before they had been invented. He became an engineering apprentice at Rolls-Royce Aero Engines in Derby, where his original and creative thinking led to him winning a competition, the prize for which was a Private Pilot's Licence. Learning to fly was a skill he found easy to master with his ability to judge the three-dimensional concepts of speed, height and vectors.\n\nIn 1971 he joined British Airways as a trainee airline pilot at Hamble. It was as a distraction from the intensive training that he first took up oil painting. This soon led to exhibitions in London with the Guild of Aviation Artists, where he won several awards including the Aviation Painting of the Year Award in 1987. He was elected a Full Member and was Chairman for two years. His paintings were bought by British Aerospace, Fokker, the RAF Museum at Hendon, British Caledonian Airways and Aer Lingus. He also took pleasure in painting and exhibiting locally in Sussex, where he could broaden his subjects and artistic ideas.\n\nToday he enjoys the creative process by switching between drawing, painting and sculpture, responding and editing from one work to the next. In 2017 he held a successful one-man show at the Oxmarket Gallery in Chichester and later in the year won the Stride Open Drawing Award.",
   "timeline": [
     {
@@ -148,7 +148,18 @@
   "reflection_feature": "Reflection",
   "reflection_text": "Polished stainless steel that is never quite the same twice: its perspective and form change with whatever is behind it, and with where you stand to look at it.",
   "scale_graphic": "images/tryst-scale.png",
-  "highlights": ["Reflection", "Crest", "Beret Rouge", "Figure Study", "Naomi (Figure with Outline)", "Suzanne", "The Head of Africa", "Bean Pod", "Karen Playing Tchaikovsky", "Combustion"],
+  "highlights": [
+    "Reflection",
+    "Crest",
+    "Beret Rouge",
+    "Figure Study",
+    "Naomi (Figure with Outline)",
+    "Suzanne",
+    "The Head of Africa",
+    "Bean Pod",
+    "Karen Playing Tchaikovsky",
+    "Combustion"
+  ],
   "reel_first": "Tryst",
   "story": {
     "eyebrow": "How a work comes to be",
