@@ -70,6 +70,24 @@ def slug(s: str) -> str:
 WIX = re.compile(r"^https://static\.wixstatic\.com/media/([A-Za-z0-9_~.\-]+)$")
 
 
+def ar_style(src: str) -> str:
+    """Inline the first slide's shape so the reel frame does not jump on first paint.
+
+    The frame sizes itself from --ar, which the reel script sets per slide. Only
+    the server-rendered first slide needs it baked in; anything unreadable just
+    falls back to the CSS default ratio.
+    """
+    try:
+        from PIL import Image
+        p = ROOT / src
+        if p.exists():
+            w, h = Image.open(p).size
+            if w and h:
+                return f' style="--ar: {w} / {h}"'
+    except Exception:
+        pass
+    return ""
+
 def img(u: str, w: int, R: str = "") -> str:
     u = str(u or "").strip()
     m = WIX.match(u)
@@ -458,7 +476,7 @@ home = f'''    <section class="hero">
           </div>
         </div>
         <figure class="show-reel" id="reel" aria-roledescription="slideshow" aria-label="Selected works">
-          <div class="reel-frame"><img class="on" src="{E(img(first["image"], 1400))}" alt="{E(alt(first))}" fetchpriority="high"></div>
+          <div class="reel-frame"{ar_style(first["image"])}><img class="on" src="{E(img(first["image"], 1400))}" alt="{E(alt(first))}" fetchpriority="high"></div>
           <div class="reel-progress" aria-hidden="true"><i></i></div>
           <figcaption class="reel-bar">
             <span class="t" aria-live="polite">{E(first["title"])}</span>

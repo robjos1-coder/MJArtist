@@ -282,10 +282,18 @@
       const hn = el("button", { type: "button", class: "reel-hover next", "aria-label": "Next work", text: "\u2192", onclick: (e) => { e.stopPropagation(); show(i + 1); } });
       frame.replaceChildren(...imgs, btn, hp, hn);
       bar.parentElement.style.setProperty("--dur", `${DUR}ms`);
+      // The frame takes each work's own shape, so nothing is ever letterboxed.
+      // CSS eases the change, and the reduced-motion rule turns that easing off.
+      function fit(im) {
+        if (im.naturalWidth && im.naturalHeight) frame.style.setProperty("--ar", im.naturalWidth + " / " + im.naturalHeight);
+      }
       function show(k) {
         i = (k + list.length) % list.length;
         const a = list[i];
         if (!imgs[i].getAttribute("src")) imgs[i].src = imgSrc(a.image, 1400);
+        const cur = imgs[i];
+        if (cur.complete) fit(cur);
+        else cur.addEventListener("load", () => { if (imgs[i] === cur) fit(cur); }, { once: true });
         imgs.forEach((im, j) => im.classList.toggle("on", j === i));
         const nx = imgs[(i + 1) % list.length]; if (!nx.getAttribute("src")) nx.src = imgSrc(list[(i + 1) % list.length].image, 1400);
         t.textContent = a.title;
