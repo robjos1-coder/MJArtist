@@ -12,10 +12,7 @@ content:
     type: file
     path: content/artworks.json
     format: json
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{index}. {title} - {type}, {series}"
+    list: true
     description: >-
       Every artwork on the site. Drag to reorder — the order here is the order on the website.
       Tick "Include in home page slideshow" for the pieces that should rotate beside Michael's name.
@@ -104,10 +101,7 @@ content:
     type: file
     path: content/exhibitions.json
     format: json
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{index}. {venue} - {start}"
+    list: true
     description: >-
       Add each show with a start and end date. The website works out by itself whether a show
       is upcoming, on now or past — nothing needs deleting.
