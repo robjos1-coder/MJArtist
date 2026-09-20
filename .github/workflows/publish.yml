@@ -77,6 +77,7 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
+      - run: "pip install --only-binary=:all: --require-hashes -r tools/requirements.lock"
       - name: Build pages (one per artwork, sitemap, search data)
         run: python tools/build_site.py
       - name: Collect public files

@@ -84,8 +84,9 @@ def ar_style(src: str) -> str:
             w, h = Image.open(p).size
             if w and h:
                 return f' style="--ar: {w} / {h}"'
-    except Exception:
-        pass
+        print(f"note: no local file for reel slide {src!r}", file=sys.stderr)
+    except Exception as e:
+        print(f"note: could not read reel slide size ({e})", file=sys.stderr)
     return ""
 
 def img(u: str, w: int, R: str = "") -> str:
