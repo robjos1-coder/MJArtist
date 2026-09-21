@@ -1,18 +1,10 @@
 {
-  "order": 130,
   "title": "Exhausted",
+  "type": "Sculpture",
   "series": "The Creative Figure",
-  "stage": "",
-  "for_work": "",
-  "image": "images/exhausted.jpg",
-  "more_images": [],
-  "medium": "",
-  "size": "",
-  "year": "",
-  "price": "",
-  "status": "",
+  "image": "/images/exhausted.jpg",
+  "medium": "Bronze Resin",
   "hero": false,
   "featured": true,
-  "notes": "",
-  "type": "Sculpture"
+  "order": 130
 }
