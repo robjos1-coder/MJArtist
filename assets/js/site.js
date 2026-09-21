@@ -197,10 +197,33 @@
       });
       document.body.append(box);
     }
+    // The panel is a narrow fixed column and titles are set in a wide display face,
+    // so a long name like Acupuncture cannot fit at full size. Measure the longest
+    // word and scale the heading down until it fits on one line; shorter names keep
+    // the full size, and anything still too wide wraps as before.
+    function fitTitle(h) {
+      const MAX = 28, MIN = 13;
+      h.style.fontSize = MAX + "px";
+      const word = (h.textContent || "").split(/\s+/).reduce((a, b) => (b.length > a.length ? b : a), "");
+      const avail = h.clientWidth;
+      if (!word || !avail) return;
+      const cs = getComputedStyle(h);
+      const probe = el("span", { text: word });
+      probe.style.cssText = "position:absolute;left:-9999px;top:0;white-space:pre;visibility:hidden;";
+      probe.style.fontFamily = cs.fontFamily;
+      probe.style.fontWeight = cs.fontWeight;
+      probe.style.fontSize = MAX + "px";
+      probe.style.letterSpacing = cs.letterSpacing;
+      document.body.append(probe);
+      const w = probe.offsetWidth;
+      probe.remove();
+      if (w > avail) h.style.fontSize = Math.max(MIN, Math.floor(MAX * avail / w)) + "px";
+    }
     function render() {
       const a = list[i];
       img.src = imgSrc(a.image, 2000); img.alt = a.title;
       title.textContent = a.title;
+      fitTitle(title);
       count.textContent = `${i + 1} / ${list.length} — ${a.series || ""}`;
       dl.replaceChildren();
       const rows = [["Type", a.type], ["Stage", a.stage && a.for_work ? `${a.stage} for ${a.for_work}` : ""], ["Medium", a.medium], ["Size", a.size], ["Year", a.year], ["Price", a.price], ["Status", STATUS[(a.status || "").toLowerCase()] || ""]];
