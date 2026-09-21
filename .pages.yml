@@ -17,12 +17,12 @@ content:
       Every work, one file each. Search by title, medium, series or notes, and click a
       column heading to sort. Position sets the order on the website.
     view:
-      fields: [image, title, type, series, year]
+      fields: [image, title, type, series, order]
       primary: title
-      sort: [order, title, type, series, year]
+      sort: [title, type, series, order]
       search: [title, type, series, medium, notes]
       default:
-        sort: order
+        sort: title
         order: asc
     fields:
       - name: title
