@@ -1,18 +1,12 @@
 {
-  "order": 170,
   "title": "Shiver — maquette",
+  "type": "Sculpture",
   "series": "The Creative Figure",
   "stage": "Maquette",
   "for_work": "Shiver",
-  "image": "images/shiver-maquette.jpg",
-  "more_images": [],
-  "medium": "",
-  "size": "",
-  "year": "",
-  "price": "",
-  "status": "",
+  "image": "/images/shiver-maquette.jpg",
+  "medium": "Copper Wire",
   "hero": false,
   "featured": false,
-  "notes": "",
-  "type": "Sculpture"
+  "order": 170
 }
